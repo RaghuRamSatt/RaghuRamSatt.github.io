@@ -12590,3 +12590,33 @@ textarea.form-control {
   height: 80%;
   fill: white;
 }
+
+
+.cd-timeline-img.cd-windaid {
+  background-color: #016738; /* WindAid green color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cd-windaid img {
+  width: 99.9%;
+  height: 99.9%;
+  object-fit: contain;
+}
+
+.cd-timeline-img.cd-cardiff-racing {
+  background-color: #ffffff; /* White background to match the logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cd-cardiff-racing img {
+  width: 150%;  /* Slightly larger than the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  object-position: center;
+}
