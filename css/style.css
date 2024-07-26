@@ -12603,7 +12603,7 @@ textarea.form-control {
 .cd-windaid img {
   width: 99.9%;
   height: 99.9%;
-  object-fit: contain;
+  object-fit: contain !important;
 }
 
 .cd-timeline-img.cd-cardiff-racing {
@@ -12617,6 +12617,7 @@ textarea.form-control {
 .cd-cardiff-racing img {
   width: 150%;  /* Slightly larger than the container */
   height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  object-fit: contain !important;
   object-position: center;
 }
+
