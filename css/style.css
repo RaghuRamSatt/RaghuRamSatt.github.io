@@ -425,7 +425,7 @@ h5,
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 h6_black,
@@ -12586,8 +12586,8 @@ textarea.form-control {
 }
 
 .cd-cardiff svg {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   fill: white;
 }
 
@@ -12615,9 +12615,163 @@ textarea.form-control {
 }
 
 .cd-cardiff-racing img {
-  width: 150%;  /* Slightly larger than the container */
+  width: 100%;  /* Slightly larger than the container */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain !important;
   object-position: center;
 }
 
+.cd-timeline-img.cd-nyu {
+  background-color: #fff; /* NYU Tandon purple */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cd-nyu img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+.cd-timeline-img.cd-nyu {
+  background-color: #ffffff; 
+}
+
+.cd-timeline-img img.timeline-img-nyu-dsl {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.timeline-scroll {
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.timeline {
+    display: flex;
+    position: relative;
+    width: max-content;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #007bff;
+    z-index: 1;
+}
+
+.timeline-event {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 40px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-event::before {
+    content: attr(data-date);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.timeline-event::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 40px;
+    height: 2px;
+    background: #007bff;
+}
+
+.timeline-event:last-child::after {
+    display: none;
+}
+
+.timeline-event.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+}
+
+.timeline-event p {
+    display: none;
+}
+
+.timeline-event.active p {
+    display: block;
+}
+
+.hero-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-out;
+}
+
+/* .jumbled {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #0075f6;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s ease-out;
+}
+
+.organized {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+} */
+
+
+.cd-timeline-content.night {
+  background-color: #333;
+}
+
+.cd-timeline-content.night .timeline_title,
+.cd-timeline-content.night .timeline_text,
+.cd-timeline-content.night .cd-date,
+.cd-timeline-content.night .expanded-content p {
+  color: #f8f9fb;
+}
+
+.cd-timeline-content.night::before {
+  border-right-color: #333;
+}
+
+.cd-timeline-content.night.experience::before {
+  border-left-color: #333;
+}

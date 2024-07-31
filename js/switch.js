@@ -5,6 +5,7 @@ jQuery(document).ready(function ($) {
       $('body').addClass('night');
       $('blog-entry .text .heading a:hover').addClass('night');
       $('blog-entry .text .heading a:focus').addClass('night');
+      $('.cd-timeline-content').addClass('night');
       $('blog-entry .text .heading a:active').addClass('night');
       $('blog-entry .text .heading.a').addClass('night');
       $(".turn-white").addClass("white_n");
@@ -21,6 +22,7 @@ jQuery(document).ready(function ($) {
       $('span.subheading').addClass('night');
     } else {
       $('body').removeClass('night');
+      $('.cd-timeline-content').removeClass('night');
       $('blog-entry .text .heading a:hover').removeClass('night');
       $('blog-entry .text .heading a:focus').removeClass('night');
       $('blog-entry .text .heading a:active').removeClass('night');
