@@ -182,7 +182,7 @@ Main components
 .cd-timeline-content .cd-date {
   display: block;
   font-size: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   color: #888;
 }
 
@@ -238,18 +238,17 @@ Main components
   }
 
   .cd-timeline-content .cd-date {
-    position: absolute;
-    width: 100%;
-    left: 125%;
-    top: 6px;
-    font-size: 16px;
-    font-size: 1rem;
-  }
-
-  .cd-timeline-content.experience .cd-date {
+    position: relative;
     left: auto;
-    right: 125%;
-    text-align: right;
+    right: auto;
+    top: auto;
+    font-size: 1em;
+    padding: 0;
+    opacity: 0.7;
+  }
+  
+  .cd-timeline-content.experience .cd-date {
+    text-align: left;
   }
 }
 
@@ -299,14 +298,15 @@ Main components
     border-left: none;
   }
   
-  .cd-date {
+  .cd-timeline-content .cd-date {
     position: relative;
     top: auto;
     left: auto;
     right: auto;
     width: 100%;
     text-align: left;
-    padding: 0.5em 0 0;
+    padding: 0;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -402,4 +402,8 @@ Main components
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.cd-timeline-content::before {
+  display: none;
 }

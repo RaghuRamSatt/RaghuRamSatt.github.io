@@ -12795,3 +12795,12 @@ textarea.form-control {
 .animated-text .latin {
   opacity: 1;
 }
+
+.justified-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.justified-text + .justified-text {
+  margin-top: 1em;
+}
