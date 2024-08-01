@@ -75,3 +75,22 @@ $(document).ready(function () {
   }
 });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const animatedText = document.querySelector('.animated-text');
+  const latinSpan = animatedText.querySelector('.latin');
+  const englishSpan = animatedText.querySelector('.english');
+  let showLatin = true;
+
+  setInterval(() => {
+    if (showLatin) {
+      latinSpan.style.opacity = 0;
+      englishSpan.style.opacity = 1;
+    } else {
+      latinSpan.style.opacity = 1;
+      englishSpan.style.opacity = 0;
+    }
+    showLatin = !showLatin;
+  }, 3000);
+});

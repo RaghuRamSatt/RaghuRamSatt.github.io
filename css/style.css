@@ -12775,3 +12775,23 @@ textarea.form-control {
 .cd-timeline-content.night.experience::before {
   border-left-color: #333;
 }
+
+
+.animated-text {
+  color: royalblue;
+  position: relative;
+  height: 1.5em; /* Adjust based on your font size */
+}
+
+.animated-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.animated-text .latin {
+  opacity: 1;
+}
