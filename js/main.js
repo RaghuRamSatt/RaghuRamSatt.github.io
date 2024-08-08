@@ -286,3 +286,24 @@ $(document).ready(function(){
         return false; 
 	}); 
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	const viewButtons = document.querySelectorAll('.view-details');
+	const closeButtons = document.querySelectorAll('.close-overlay');
+	
+	viewButtons.forEach(button => {
+	  button.addEventListener('click', function() {
+		const overlay = this.nextElementSibling;
+		overlay.classList.add('active');
+	  });
+	});
+	
+	closeButtons.forEach(button => {
+	  button.addEventListener('click', function() {
+		const overlay = this.closest('.publication-overlay');
+		overlay.classList.remove('active');
+	  });
+	});
+  });

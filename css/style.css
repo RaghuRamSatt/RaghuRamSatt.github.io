@@ -12804,3 +12804,387 @@ textarea.form-control {
 .justified-text + .justified-text {
   margin-top: 1em;
 }
+
+
+
+
+#publications-section {
+  background-color: #f8f9fa;
+  padding: 6em 0;
+  position: relative;
+}
+
+#publications-section .publication-item {
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#publications-section .publication-item:hover {
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+#publications-section .publication-item .pub-info {
+  padding: 20px;
+}
+
+#publications-section .publication-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#publications-section .publication-item p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+#publications-section .publication-item .pub-link {
+  font-size: 14px;
+  color: #0075f6;
+  text-decoration: none;
+}
+
+#publications-section .publication-item .pub-link:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode styles */
+body.night #publications-section {
+  background-color: #222;
+}
+
+body.night #publications-section .publication-item {
+  background: #333;
+}
+
+body.night #publications-section .publication-item h3 {
+  color: #f8f9fa;
+}
+
+body.night #publications-section .publication-item p {
+  color: #adb5bd;
+}
+
+body.night #publications-section .publication-item .pub-link {
+  color: #0075f6;
+}
+
+
+
+.justified-text + .justified-text {
+  margin-top: 1em;
+}
+
+
+#publications-section .publication-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#publications-section .publication-image {
+  position: relative;
+  overflow: hidden;
+}
+
+#publications-section .publication-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: cover; /* This ensures the image covers the area without distortion */
+  /* aspect-ratio: 16 / 9; This sets a fixed aspect ratio for the image container */
+}
+
+#publications-section .publication-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay for both modes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#publications-section .publication-content {
+  color: #fff; /* White text for both modes */
+  padding: 20px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#publications-section .publication-item:hover .publication-overlay {
+  opacity: 1;
+}
+
+/* Light mode specific styles */
+body:not(.night) #publications-section .publication-overlay {
+  background-color: rgba(0, 0, 0, 0.85); /* Slightly less dark for light mode */
+}
+
+#publications-section .publication-item:hover .publication-image img {
+  transform: scale(1.1);
+}
+
+#publications-section .publication-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #fff; /* Ensure the title is always white */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* Add shadow for better contrast */
+}
+
+#publications-section .publication-content p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#publications-section .publication-content ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#publications-section .publication-content .pub-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #4da3ff; /* Light blue for both modes */
+  text-decoration: none;
+}
+
+#publications-section .publication-content .pub-link:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode specific styles */
+body.night #publications-section .publication-overlay {
+  background-color: rgba(0, 0, 0, 0.95); /* Very dark for night mode */
+}
+
+
+body.night #publications-section .publication-content {
+  color: #f8f9fa; /* Light gray text for night mode */
+}
+
+body.night #publications-section .publication-content h3 {
+  color: #fff; /* Keep the title white in night mode */
+}
+
+.publications-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  padding-bottom: 20px; /* Add some padding to show the scrollbar */
+}
+
+.publications-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.publications-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.publication-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px; /* Adjust as needed */
+  margin-right: 20px;
+  white-space: normal;
+}
+
+/* .publications-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.publications-scroll {
+  cursor: grab;
+  user-select: none;
+}
+
+.publications-scroll.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.publication-item {
+  flex: 0 0 auto;
+  width: 400px; /* Adjust this value as needed */
+  /* margin-right: 30px;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */ 
+
+.publication-image {
+  width: 100%;
+  height: 500px; /* Adjust this value as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Light background for images */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.publication-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* This ensures the entire image is visible */
+  width: auto;
+  height: auto;
+}
+
+.publication-item h3 {
+  margin: 15px;
+  font-size: 18px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.view-details {
+  margin: 0 15px 15px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.view-details:hover {
+  background-color: #0056b3;
+}
+
+/* Ensure the container allows for the larger items */
+#publications-section .container {
+  max-width: 1200px; /* Adjust based on your layout needs */
+  padding: 0 20px;
+}
+
+.publication-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.publication-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.publication-item:hover .publication-overlay {
+  opacity: 1;
+}
+
+/* Adjust overlay content for larger screens */
+.publication-content {
+  max-width: 900px; /* Increased from 800px */
+  max-height: 85vh; /* Slightly increased from 80vh */
+  padding: 40px; /* Increased from 30px */
+}
+
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* Ensure text is readable in both light and dark modes */
+body.night .publication-content {
+  background-color: #333;
+  color: #f8f9fa;
+}
+
+/* Style scrollbar for webkit browsers */
+.publications-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.publications-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .publication-item {
+    width: 400px; /* Slightly smaller on medium screens */
+  }
+  
+  .publication-image {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .publication-item {
+    width: 300px; /* Even smaller on very small screens */
+  }
+  
+  .publication-image {
+    height: 225px; /* Maintain aspect ratio */
+  }
+}
