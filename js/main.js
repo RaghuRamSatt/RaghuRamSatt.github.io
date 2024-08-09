@@ -287,23 +287,65 @@ $(document).ready(function(){
 	}); 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+	const viewButtons = document.querySelectorAll('#publications-section .view-details');
+	const body = document.body;
+  
+	viewButtons.forEach(button => {
+	  button.addEventListener('click', function() {
+		const overlay = this.nextElementSibling.cloneNode(true);
+		overlay.classList.add('active');
+		body.appendChild(overlay);
+		body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
+  
+		const closeButton = overlay.querySelector('.close-overlay');
+		closeButton.addEventListener('click', closeOverlay);
+  
+		overlay.addEventListener('click', function(e) {
+		  if (e.target === this) {
+			closeOverlay();
+		  }
+		});
+	  });
+	});
+  
+	function closeOverlay() {
+	  const activeOverlay = document.querySelector('.publication-overlay.active');
+	  if (activeOverlay) {
+		activeOverlay.remove();
+		body.style.overflow = ''; // Restore scrolling
+	  }
+	}
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	const viewButtons = document.querySelectorAll('.view-details');
-	const closeButtons = document.querySelectorAll('.close-overlay');
-	
-	viewButtons.forEach(button => {
-	  button.addEventListener('click', function() {
-		const overlay = this.nextElementSibling;
-		overlay.classList.add('active');
-	  });
-	});
-	
-	closeButtons.forEach(button => {
-	  button.addEventListener('click', function() {
-		const overlay = this.closest('.publication-overlay');
-		overlay.classList.remove('active');
-	  });
-	});
-  });
+    const viewButtons = document.querySelectorAll('#projects-section .view-details');
+    const body = document.body;
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const overlay = this.nextElementSibling.cloneNode(true);
+            overlay.classList.add('active');
+            body.appendChild(overlay);
+            body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
+
+            const closeButton = overlay.querySelector('.close-overlay');
+            closeButton.addEventListener('click', closeOverlay);
+
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeOverlay();
+                }
+            });
+        });
+    });
+
+    function closeOverlay() {
+        const activeOverlay = document.querySelector('.project-overlay.active');
+        if (activeOverlay) {
+            activeOverlay.remove();
+            body.style.overflow = ''; // Restore scrolling
+        }
+    }
+});

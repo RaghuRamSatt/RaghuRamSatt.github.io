@@ -13119,15 +13119,21 @@ body.night #publications-section .publication-content h3 {
   visibility: visible;
 }
 
-.publication-item:hover .publication-overlay {
-  opacity: 1;
+.publication-content {
+  background-color: #fff;
+  color: #333;
+  padding: 40px;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust overlay content for larger screens */
-.publication-content {
-  max-width: 900px; /* Increased from 800px */
-  max-height: 85vh; /* Slightly increased from 80vh */
-  padding: 40px; /* Increased from 30px */
+body.night .publication-content {
+  background-color: #333;
+  color: #f8f9fa;
 }
 
 .close-overlay {
@@ -13138,13 +13144,15 @@ body.night #publications-section .publication-content h3 {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: white;
+  color: #333;
 }
 
+/* Ensure the publication item doesn't interfere with the overlay */
+.publication-item {
+  position: relative;
+}
 
-/* Ensure text is readable in both light and dark modes */
-body.night .publication-content {
-  background-color: #333;
+body.night .close-overlay {
   color: #f8f9fa;
 }
 
@@ -13187,4 +13195,175 @@ body.night .publication-content {
   .publication-image {
     height: 225px; /* Maintain aspect ratio */
   }
+}
+
+
+/* Project styles */
+.projects-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+.project-item {
+  flex: 0 0 auto;
+  width: 400px;
+  margin-right: 20px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.project-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.project-item h3 {
+  padding: 15px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.night .project-item h3 {
+  background-color: #333;
+  color: #fff;
+}
+
+body.night #projects-section .project-item {
+  background: #333;
+}
+
+.view-details {
+  display: block;
+  width: 93%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+body.night .view-details {
+  background: #0056b3;
+}
+
+.project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.project-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-content {
+  background-color: #fff;
+  color: #333;
+  padding: 40px;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.night .project-content {
+  background-color: #333;
+  color: #f8f9fa;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+body.night .close-overlay {
+  color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-item {
+    width: 400px;
+  }
+  
+  .project-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-item {
+    width: 300px;
+  }
+  
+  .project-image {
+    height: 225px;
+  }
+}
+
+.project-item {
+  flex: 0 0 auto;
+  width: 500px;
+  margin-right: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.project-item h3 {
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+.view-details {
+  display: block;
+  width: 93%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
 }
