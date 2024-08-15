@@ -1969,3 +1969,89 @@ textarea.form-control {
 	  height: 100px;
 	}
   }
+
+
+  /* Styles for both publications and projects scroll containers */
+.publications-scroll,
+.projects-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Always show scrollbar */
+.publications-scroll,
+.projects-scroll {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 #f1f1f1; /* For Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari */
+.publications-scroll::-webkit-scrollbar,
+.projects-scroll::-webkit-scrollbar {
+  height: 8px; /* Horizontal scrollbar height */
+  width: 8px; /* Vertical scrollbar width */
+}
+
+.publications-scroll::-webkit-scrollbar-track,
+.projects-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb,
+.projects-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.publications-scroll::-webkit-scrollbar-thumb:hover,
+.projects-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode styles */
+body.night .publications-scroll,
+body.night .projects-scroll {
+  scrollbar-color: #555 #333; /* For Firefox */
+}
+
+body.night .publications-scroll::-webkit-scrollbar-track,
+body.night .projects-scroll::-webkit-scrollbar-track {
+  background: #333;
+}
+
+body.night .publications-scroll::-webkit-scrollbar-thumb,
+body.night .projects-scroll::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+body.night .publications-scroll::-webkit-scrollbar-thumb:hover,
+body.night .projects-scroll::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .publications-scroll,
+  .projects-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1; /* More visible color on light mode */
+  }
+
+  .publications-scroll::-webkit-scrollbar-thumb,
+  .projects-scroll::-webkit-scrollbar-thumb {
+    background: #007bff; /* More visible color on light mode */
+  }
+
+  body.night .publications-scroll,
+  body.night .projects-scroll {
+    scrollbar-color: #4da3ff #333; /* More visible color on dark mode */
+  }
+
+  body.night .publications-scroll::-webkit-scrollbar-thumb,
+  body.night .projects-scroll::-webkit-scrollbar-thumb {
+    background: #4da3ff; /* More visible color on dark mode */
+  }
+}
