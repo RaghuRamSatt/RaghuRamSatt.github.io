@@ -349,3 +349,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	const scrollContainers = document.querySelectorAll('.publications-scroll, .projects-scroll');
+	
+	scrollContainers.forEach(container => {
+	  const leftArrow = container.querySelector('.scroll-left');
+	  const rightArrow = container.querySelector('.scroll-right');
+	  
+	  leftArrow.addEventListener('click', () => {
+		container.scrollBy({ left: -300, behavior: 'smooth' });
+	  });
+	  
+	  rightArrow.addEventListener('click', () => {
+		container.scrollBy({ left: 300, behavior: 'smooth' });
+	  });
+	  
+	  // Show/hide arrows based on scroll position
+	  container.addEventListener('scroll', () => {
+		leftArrow.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
+		rightArrow.style.display = 
+		  container.scrollLeft < container.scrollWidth - container.clientWidth ? 'flex' : 'none';
+	  });
+	  
+	  // Initial check
+	  setTimeout(() => {
+		leftArrow.style.display = 'none';
+		rightArrow.style.display = 
+		  container.scrollWidth > container.clientWidth ? 'flex' : 'none';
+	  }, 100);
+	});
+  });

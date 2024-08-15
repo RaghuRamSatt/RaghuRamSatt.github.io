@@ -1667,24 +1667,6 @@ textarea.form-control {
 	}
 }
 
-/* Blog*/
-.post-info {
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: $white;
-	letter-spacing: .1em;
-	> div {
-		display: inline-block;
-
-		.seperator {
-			display: inline-block;
-			margin: 0 10px;
-			opacity: .5;
-		}
-	}
-}
-
 .tagcloud {
 	a {
 		text-transform: uppercase;
@@ -1903,3 +1885,87 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+
+
+
+.publications-scroll,
+.projects-scroll {
+  position: relative;
+}
+
+.scroll-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;  /* Increased from 40px */
+	height: 50px; /* Increased from 40px */
+	background-color: rgba(0, 0, 0, 0.7); /* Made slightly darker */
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 24px; /* Increased from 20px */
+	z-index: 10;
+	opacity: 0.8; /* Made slightly more opaque */
+	transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+
+  .scroll-arrow:hover {
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .scroll-left {
+	left: 15px; /* Moved slightly more inward */
+  }
+  
+  .scroll-right {
+	right: 15px; /* Moved slightly more inward */
+  }
+
+.publications-scroll:hover .scroll-arrow,
+.projects-scroll:hover .scroll-arrow {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .scroll-arrow {
+    opacity: 10;
+  }
+}
+
+
+@media (max-width: 768px) {
+	.project-item {
+	  width: 150px; /* Smaller width for tablets */
+	}
+	
+	.project-image {
+	  height: 150px; /* Adjusted height */
+	}
+	
+	.project-image img,
+	.project-image video {
+	  width: 150px; /* Match the new width */
+	  height: 150px;
+	}
+  }
+  
+  @media (max-width: 576px) {
+	.project-item {
+	  width: 100px; /* Even smaller for mobile phones */
+	}
+	
+	.project-image {
+	  height: 100px;
+	}
+	
+	.project-image img,
+	.project-image video {
+	  width: 100px;
+	  height: 100px;
+	}
+  }
