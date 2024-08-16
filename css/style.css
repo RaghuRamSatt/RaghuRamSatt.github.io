@@ -13065,11 +13065,6 @@ body.night .scroll-arrow:hover {
   visibility: visible;
 }
 
-.publication-overlay:not(.active) {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 
 .publication-content {
   background-color: #fff;
