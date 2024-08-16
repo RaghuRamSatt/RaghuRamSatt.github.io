@@ -319,38 +319,89 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const viewButtons = document.querySelectorAll('#projects-section .view-details');
-    const body = document.body;
+// document.addEventListener('DOMContentLoaded', function() {
+// 	const scrollContainer = document.querySelector('.publications-scroll');
+// 	const scrollWrapper = document.querySelector('.publications-wrapper');
+// 	const leftArrow = document.querySelector('.scroll-left');
+// 	const rightArrow = document.querySelector('.scroll-right');
+  
+// 	// Show part of the next item
+// 	function adjustScroll() {
+// 	  const items = scrollWrapper.querySelectorAll('.publication-item');
+// 	  const lastItem = items[items.length - 1];
+// 	  scrollWrapper.style.paddingRight = `${scrollContainer.offsetWidth - lastItem.offsetWidth}px`;
+// 	}
+  
+// 	// Scroll indicators
+// 	function updateScrollIndicators() {
+// 	  leftArrow.style.display = scrollContainer.scrollLeft > 0 ? 'flex' : 'none';
+// 	  rightArrow.style.display = 
+// 		scrollContainer.scrollLeft < scrollContainer.scrollWidth - scrollContainer.clientWidth - 10 ? 'flex' : 'none';
+// 	}
+  
+// 	leftArrow.addEventListener('click', () => {
+// 	  scrollContainer.scrollBy({ left: -400, behavior: 'smooth' });
+// 	});
+  
+// 	rightArrow.addEventListener('click', () => {
+// 	  scrollContainer.scrollBy({ left: 400, behavior: 'smooth' });
+// 	});
+  
+// 	scrollContainer.addEventListener('scroll', updateScrollIndicators);
+  
+// 	window.addEventListener('resize', () => {
+// 	  adjustScroll();
+// 	  updateScrollIndicators();
+// 	});
+  
+// 	// Initial setup
+// 	adjustScroll();
+// 	updateScrollIndicators();
+  
+// 	// View details functionality
+// 	const viewButtons = document.querySelectorAll('#publications-section .view-details');
+// 	const body = document.body;
+  
+// 	viewButtons.forEach(button => {
+// 	  button.addEventListener('click', function() {
+// 		const overlay = this.nextElementSibling.cloneNode(true);
+// 		overlay.classList.add('active');
+// 		body.appendChild(overlay);
+// 		body.style.overflow = 'hidden';
+  
+// 		const closeButton = overlay.querySelector('.close-overlay');
+// 		closeButton.addEventListener('click', closeOverlay);
+  
+// 		overlay.addEventListener('click', function(e) {
+// 		  if (e.target === this) {
+// 			closeOverlay();
+// 		  }
+// 		});
+// 	  });
+// 	});
+  
+// 	function closeOverlay() {
+// 	  const activeOverlay = document.querySelector('.publication-overlay.active');
+// 	  if (activeOverlay) {
+// 		activeOverlay.remove();
+// 		body.style.overflow = '';
+// 	  }
+// 	}
+//   });
 
-    viewButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const overlay = this.nextElementSibling.cloneNode(true);
-            overlay.classList.add('active');
-            body.appendChild(overlay);
-            body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
 
-            const closeButton = overlay.querySelector('.close-overlay');
-            closeButton.addEventListener('click', closeOverlay);
-
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeOverlay();
-                }
-            });
-        });
-    });
-
-    function closeOverlay() {
-        const activeOverlay = document.querySelector('.project-overlay.active');
-        if (activeOverlay) {
-            activeOverlay.remove();
-            body.style.overflow = ''; // Restore scrolling
-        }
-    }
-});
-
-
+//   function toggleDarkMode() {
+// 	document.body.classList.toggle('night');
+// 	// You might want to save the user's preference here
+// 	localStorage.setItem('darkMode', document.body.classList.contains('night'));
+//   }
+  
+//   // Apply dark mode on page load if it was previously enabled
+//   document.addEventListener('DOMContentLoaded', function() {
+// 	if (localStorage.getItem('darkMode') === 'true') {
+// 	  document.body.classList.add('night');
+// 	}
+//   });
 
 document.addEventListener('DOMContentLoaded', function() {
 	const scrollContainers = document.querySelectorAll('.publications-scroll, .projects-scroll');
@@ -358,6 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	scrollContainers.forEach(container => {
 	  const leftArrow = container.querySelector('.scroll-left');
 	  const rightArrow = container.querySelector('.scroll-right');
+	  const wrapper = container.querySelector('.publications-wrapper, .projects-wrapper');
 	  
 	  leftArrow.addEventListener('click', () => {
 		container.scrollBy({ left: -300, behavior: 'smooth' });
@@ -381,4 +433,34 @@ document.addEventListener('DOMContentLoaded', function() {
 		  container.scrollWidth > container.clientWidth ? 'flex' : 'none';
 	  }, 100);
 	});
+  
+	// View details functionality for both publications and projects
+	const viewButtons = document.querySelectorAll('#publications-section .view-details, #projects-section .view-details');
+	const body = document.body;
+  
+	viewButtons.forEach(button => {
+	  button.addEventListener('click', function() {
+		const overlay = this.nextElementSibling.cloneNode(true);
+		overlay.classList.add('active');
+		body.appendChild(overlay);
+		body.style.overflow = 'hidden';
+  
+		const closeButton = overlay.querySelector('.close-overlay');
+		closeButton.addEventListener('click', closeOverlay);
+  
+		overlay.addEventListener('click', function(e) {
+		  if (e.target === this) {
+			closeOverlay();
+		  }
+		});
+	  });
+	});
+  
+	function closeOverlay() {
+	  const activeOverlay = document.querySelector('.publication-overlay.active, .project-overlay.active');
+	  if (activeOverlay) {
+		activeOverlay.remove();
+		body.style.overflow = '';
+	  }
+	}
   });
