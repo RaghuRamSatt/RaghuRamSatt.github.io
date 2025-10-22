@@ -414,10 +414,10 @@ Main components
 }
 
 .cd-timeline-img .timeline-img-grantx {
-  width: 85%;
-  height: 85%;
+  width: 95%;
+  height: 95%;
   object-fit: contain;
-  padding: 2px;
+  padding: 0px;
 }
 
 .cd-timeline-content::before {
