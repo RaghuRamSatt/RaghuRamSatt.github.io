@@ -133,26 +133,27 @@
 						<div class="col-md-12 heading-section ftco-animate">
 							<h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me</h2>
 							<p class="justified-text">
-								I am a <strong>Data Science graduate student</strong> at <em>Northeastern University</em>, with a unique blend of 
-								Mechanical Engineering expertise and a passion for data-driven innovation. My journey from engineering to data science 
-								has equipped me with a diverse skill set, allowing me to <strong>tackle complex problems from multiple perspectives</strong>.
+								I am an <strong>ML Engineer at GrantX</strong>, where I build production-scale AI infrastructure for grant discovery. 
+								With a recently completed <strong>M.S. in Data Science from Northeastern University</strong> (3.867 GPA) and a Mechanical 
+								Engineering background, I bring a unique blend of technical depth and interdisciplinary problem-solving to complex AI systems.
 							</p>
 							<p class="justified-text">
-								My experience spans from developing <strong>advanced machine learning models for semiconductor manufacturing</strong> at Veeco 
-								to conducting impactful research on gun violence and patient mortality at NYU's Dynamical Systems Laboratory. I've successfully 
-								secured <strong>$2.1 million in research funding</strong> and published in prestigious journals like Nature Human Behaviour, 
-								demonstrating my ability to translate data insights into real-world impact.
+								My experience spans <strong>data engineering, machine learning, and distributed systems</strong>. At GrantX, I architect 
+								hybrid search engines combining vector embeddings, semantic search, and LLM-based intelligence, processing 71,000+ grants 
+								with 91ms latency. I built a complete data ingestion pipeline for 756,000+ IRS 990-PF filings and optimized enrichment 
+								workflows by 4-6x through strategic database batching. Previously, I developed <strong>advanced ML models for semiconductor 
+								manufacturing</strong> at Veeco and conducted impactful research on gun violence at NYU's Dynamical Systems Laboratory, 
+								securing <strong>$2.1 million in funding</strong> and publishing in Nature Human Behaviour.
 							</p>
 							<p class="justified-text">
-								Proficient in <strong>Python, R, MATLAB, SQL, PyTorch, and TensorFlow</strong>, I excel in <strong>machine learning, 
-								statistical modeling, and data analysis</strong>. My interdisciplinary background allows me to bridge the gap between 
-								technical complexity and practical applications, whether it's optimizing manufacturing processes or developing 
-								predictive models for healthcare.
+								Proficient in <strong>Python, FastAPI, Elasticsearch, GCP/Kubernetes, PyTorch, and distributed systems (Scala, Hadoop, Spark)</strong>, 
+								I specialize in <strong>production ML systems, RAG pipelines, vector search, and GenAI integration</strong>. My work combines 
+								engineering rigor with cutting-edge AI to build scalable, reliable systems that solve real-world problems in both the public 
+								and private sectors.
 							</p>
 							<p class="justified-text">
-								As I approach the completion of my Master's degree, I'm seeking full-time opportunities starting <strong>Summer 2025</strong>. 
-								My goal is to leverage my unique combination of engineering intuition and data science expertise to <strong>drive innovation, 
-								optimize processes, and make data-informed decisions</strong> that positively impact both businesses and society.
+								I thrive at the intersection of machine learning, software engineering, and infrastructure—transforming complex technical 
+								challenges into elegant, production-ready solutions that deliver measurable business impact.
 							</p>
 							<!-- <h5 class="test centre_text" data-hover="Data for life" style="color: royalblue;">Datum ad vitam</h5> -->
 							<h5 class="animated-text centre_text" data-latin="Datum ad vitam" data-english="Data for life">
@@ -618,22 +619,24 @@
 				<div class="cd-timeline-content experience">
 					<h6 class="timeline_title">ML Engineer, GrantX</h6>
 					<p class="cd-date"><em>June 2025 - Present</em></p>
-					<p class="timeline_text">Architecting production-scale AI systems for federal grant discovery, leveraging hybrid search and GenAI.</p>
+					<p class="timeline_text">Architecting production-scale AI systems for federal and private grant discovery, leveraging hybrid search and GenAI.</p>
 					<div class="expanded-content">
 						<p class="justified-text">
 						At GrantX, I'm building the core AI infrastructure powering grant matching for thousands of organizations. 
 						I architect and deploy a hybrid search engine combining semantic search, vector embeddings (Elasticsearch ELSER + Dense Vectors), 
-						and BM25 retrieval with intelligent LLM-based query generation using Gemini 2.5 Flash. The system processes 71,000+ federal 
-						grant opportunities with 91ms p50 latency and 99.9% uptime on GCP/Kubernetes. I've developed a sophisticated RAG 
-						(Retrieval-Augmented Generation) pipeline that enriches search results with six specialized intelligence modules—eligibility 
-						analysis, financial recommendations, competitive dynamics, strategic positioning, funder intelligence, and action planning—each 
-						powered by structured Gemini API calls with JSON schema enforcement. To handle scale, I implemented batch database fetching 
-						that reduced 350 concurrent queries to 7 bulk operations, eliminating connection pool exhaustion and improving enrichment 
-						speed by 4-6x. I've also built conversational AI interfaces including the "Talk to NOFO" chatbot, enabling users to query 
-						complex funding documents through natural language. My work spans the full stack from FastAPI async endpoints to Kubernetes 
-						deployment configurations, managing both real-time search (sub-100ms) and background enrichment workflows processing 50+ 
-						grants concurrently. This role combines my expertise in distributed systems, machine learning, and production engineering 
-						to solve real-world problems in the public sector funding space.</p>
+						and BM25 retrieval with intelligent LLM-based query generation using Gemini models. The system processes 71,000+ federal 
+						and private grant opportunities with 91ms p50 latency and 99.9% uptime on GCP/Kubernetes. Beyond federal grants, I built 
+						a complete data ingestion pipeline that processes IRS Form 990-PF filings from 756,000+ private foundations—parsing XML 
+						tax returns to extract organizational metadata, grant histories, financials, and website URLs, then bulk-upserting this 
+						data into our funders database using cursor-based pagination and retry logic to handle large-scale operations reliably. 
+						I optimized the grant enrichment pipeline (RAG with six specialized Gemini-powered intelligence modules) by implementing 
+						batch database fetching that reduced 350 concurrent queries to 7 bulk operations, eliminating connection pool exhaustion 
+						and improving enrichment speed by 4-6x. I've also built conversational AI interfaces including the "Talk to NOFO" chatbot, 
+						enabling users to query complex funding documents through natural language. My work spans the full stack from FastAPI async 
+						endpoints to Kubernetes deployment configurations with sophisticated health probes and resource management, managing both 
+						real-time search (sub-100ms) and background enrichment workflows processing 50+ grants concurrently. This role combines my 
+						expertise in distributed systems, machine learning, and production engineering to solve real-world problems in the public 
+						sector funding space.</p>
 					</div>
 					<button class="expand-button">More</button>
 				</div>
@@ -696,24 +699,30 @@
 					<div class="cd-timeline-img cd-northeastern">
 						<img src="/images/Northeastern_seal.svg" alt="Northeastern University" class="timeline-img-northeastern" />
 					</div>
-					<div class="cd-timeline-content education">
-						<h6 class="timeline_title">M.S. in Data Science, Northeastern University</h6>
-						<p class="cd-date"><em>January 2023 - Present (Expected May 2025)</em></p>
-						<p class="timeline_text">Advancing my expertise in Data Science with a perfect 4.00 GPA.</p>
-						<div class="expanded-content">
-							<p class="justified-text">
-							At Northeastern University's Khoury College of Computer Sciences, I'm building upon my engineering background 
-							to specialize in Data Science. Maintaining a perfect 4.00 GPA, I'm immersing myself in advanced coursework 
-							covering crucial areas such as Programming for Data Science, Data Management and Processing, Algorithms, 
-							Supervised Machine Learning and Learning Theory, and Database Management Systems. This program is significantly 
-							enhancing my proficiency in key technologies including Python, R, SQL, and machine learning frameworks like 
-							PyTorch and Scikit-learn. The rigorous curriculum and hands-on projects are equipping me with the advanced 
-							analytical skills and theoretical knowledge necessary for tackling complex data challenges. As I progress 
-							through this program, I'm continually bridging the gap between my mechanical engineering foundation and 
-							cutting-edge data science methodologies, preparing me for impactful roles in this rapidly evolving field.</p>
-						</div>
-						<button class="expand-button">More</button>
+				<div class="cd-timeline-content education">
+					<h6 class="timeline_title">M.S. in Data Science, Northeastern University</h6>
+					<p class="cd-date"><em>January 2023 - May 2025</em></p>
+					<p class="timeline_text">Graduated with a 3.867 out of 4.00 GPA, specializing in machine learning and distributed systems.</p>
+					<div class="expanded-content">
+						<p class="justified-text">
+						At Northeastern University's Khoury College of Computer Sciences, I built upon my engineering background 
+						to specialize in Data Science, graduating with a 3.867 GPA. My advanced coursework covered crucial areas 
+						including Programming for Data Science, Data Management and Processing, Algorithms, Supervised Machine Learning 
+						and Learning Theory, and Database Management Systems. I also completed specialized courses in Distributed Systems, 
+						where I gained hands-on experience with Scala, Hadoop, and Apache Spark for large-scale data processing, 
+						and a dedicated Large Language Models (LLMs) course exploring cutting-edge generative AI techniques. 
+						My capstone project, FraudFusion, showcased advanced machine learning capabilities by developing diffusion 
+						models to generate synthetic credit card fraud data, addressing the challenge of extreme data imbalance 
+						(0.5% fraud rate). Through specialized feature engineering and custom loss functions, I improved fraud 
+						detection performance of XGBoost classifiers from 82% to approximately 90%, demonstrating practical impact 
+						in anomaly detection. This rigorous program significantly enhanced my proficiency in Python, R, SQL, and 
+						machine learning frameworks like PyTorch and Scikit-learn, equipping me with advanced analytical skills 
+						and theoretical knowledge for tackling complex data challenges. The experience bridged my mechanical 
+						engineering foundation with cutting-edge data science methodologies, preparing me for impactful roles 
+						in AI/ML engineering and data science.</p>
 					</div>
+					<button class="expand-button">More</button>
+				</div>
 				</div>
 
 
