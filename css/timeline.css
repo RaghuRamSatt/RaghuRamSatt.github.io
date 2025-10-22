@@ -404,6 +404,22 @@ Main components
   object-fit: cover;
 }
 
+.cd-timeline-img.cd-grantx {
+  background-color: #ffffff; /* White background */
+  border: 2px solid #4CAF50; /* Green border for tech/startup feel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cd-timeline-img .timeline-img-grantx {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  padding: 2px;
+}
+
 .cd-timeline-content::before {
   display: none;
 }
